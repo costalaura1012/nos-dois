@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nós dois ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: black;
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div id="content"></div>
+<button onclick="next()">Próximo</button>
+
+<script>
+let step = 0;
+
+const pages = [
+  {
+    text: `> inicializando sistema...<br>> carregando memórias...<br>> acessando arquivo: nós dois ❤️`
+  },
+  {
+    img : "foto1.jpg.jpg",
+    text: `commit 01: início de tudo <br><br>
+    Foi aqui que tudo começou… <br>
+    E olhando para esses novinhos aí, eu acho que eles tinham muita vontade mas não faziam ideia de como era um relacionamento. <br>
+    Mas que bom que foram emocionados e corajosos, é graças a eles que estamos aqui.`
+  },
+  {
+    img: "foto2.jpg.jpg",
+    text: `commit 02: conexão estabelecida <br><br>
+    Não foi um caminho fácil, dois cabeça dura, dois teimosos. <br>
+    Mas a gente foi aprendendo a dançar juntos, um passo de cada vez, e a dança começou a pegar ritmo.`
+  },
+  {
+    img: "foto3.webp.webp",
+    text: `commit 03: atualização constante <br><br>
+    Com o tempo a gente foi se conhecendo mais, se aproximando mais, e tornando o que a gente sempre teve cada vez mais forte. <br>
+    Por mais que já façam tantos anos, pra mim parece sempre o começo… e eu amo essa sensação.`
+  },
+  {
+    img: "foto4.jpg.jpg",
+    text: `commit 04: bug detectado <br><br>
+    Amar é muito parecido com aprender a andar de bicicleta sem rodinhas.<br><br>
+    Quando a gente tá aprendendo, a gente acha que vai ser fácil… mas a verdade é que a gente desequilibra.<br>
+    A gente tenta se proteger, coloca o pé no chão com medo de cair…<br>
+    Mas às vezes a gente cai mesmo.<br>
+    E machuca.<br><br>
+    Só que até quem já sabe andar às vezes cai.<br>
+    E talvez o mais importante não seja nunca cair, mas escolher continuar tentando, mesmo com alguns machucados pelo caminho.`
+  },
+  {
+    img: "foto5.jpg.jpg",
+    text: `commit 05: sistema estável <br><br>
+    Esses dias eu lembrei de você e me peguei sorrindo. <br>
+    Lembrei do seu sorriso, da sua risada frouxa, do quanto eu adoro só ficar olhando pra você quando você tá do meu lado. <br>
+    Lembrei do seu abraço quente… o mesmo abraço de 5 anos atrás que eu pensei "fudeo". <br><br>
+    E eu sorri igual eu tô somrindo agora escrevendo isso. <br>
+    Fiquei até me perguntando se talvez eu tivesse apaixonada… e foi aí que a ficha caiu. <br>
+    Eu sempre estive. Só passei muito tempo olhando pra um outro lado desse sentimento. <br><br>
+    E quer saber de uma coisa? <br>
+    Que bom que a gente se deu mais uma chance. <br>
+    Eu tô amando poder te amar do jeito que você sempre mereceu… do jeito que a gente merece. <br><br>
+    Feliz dia dos apaixonados, meu amor ❤️`
+  },
+  {
+    text: `status: em produção ❤️<br><br>
+    sem previsão de encerramento<br><br>
+    Quer continuar esse projeto comigo pra sempre?`
+  }
+];
+
+function render() {
+  const page = pages[step];
+  document.getElementById("content").innerHTML =
+    (page.img ? `<img src="${page.img}">` : "") +
+    `<div>${page.text}</div>`;
+}
+
+function next() {
+  if (step < pages.length - 1) {
+    step++;
+    render();
+  }
+}
+
+render();
+</script>
+
+</body>
+</html>
